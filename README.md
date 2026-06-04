@@ -25,7 +25,7 @@ solarwinds-sunburst-supply-chain-attack/
 │                                    
 │                                    
 ├── references.md                 # annotated sources organized by category
-└── poc/
+└── poc/                          # poc scripts
     ├── scan_orion.sh             # Linux/macOS IOC scanner 
     │                                
     ├── check_dll_hash.ps1        # Windows PowerShell verifier 
