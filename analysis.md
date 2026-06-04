@@ -1,10 +1,12 @@
-SolarWinds Orion — SUNBURST Supply Chain Attack
+# SolarWinds Orion — SUNBURST Supply Chain Attack - CVE-2020-10148
 
-CVE: CVE-2020-10148
-Type: Software Supply Chain Attack / Nation-State Espionage
-Severity: Critical (CVSS 10.0)
-Date: December 13, 2020 (public disclosure)
-Attribution: NOBELIUM / APT29 / Cozy Bear (Russian SVR)
+
+Attribution: 
+> **Type:** Software Supply Chain Attack / Nation-State Espionage
+> **Severity:** Critical (CVSS 10.0)
+> **Exposure window:** March–June 2020 (trojanized updates distributed) 
+> **Attribution:** NOBELIUM / APT29 / Cozy Bear (Russian SVR) 
+> **Malware families:** SUNBURST (SUNSPOT → SUNBURST → TEARDROP/RAINDROP → Cobalt Strike)
 
 # SUNBURST — Full Technical Analysis
 
