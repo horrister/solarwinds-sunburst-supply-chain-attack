@@ -4,6 +4,7 @@
 Attribution: 
 > **Type:** Software Supply Chain Attack / Nation-State Espionage
 > **Severity:** Critical (CVSS 10.0)
+> 
 > **Exposure window:** March–June 2020 (trojanized updates distributed) 
 > **Attribution:** NOBELIUM / APT29 / Cozy Bear (Russian SVR) 
 > **Malware families:** SUNBURST (SUNSPOT → SUNBURST → TEARDROP/RAINDROP → Cobalt Strike)
