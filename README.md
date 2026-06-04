@@ -20,20 +20,20 @@ Each entry follows a consistent format:
 
 ```
 solarwinds-sunburst-supply-chain-attack/
-├── README.md                     # overview, quick detection, key facts table
-├── analysis.md                   # full writeup (8 attack stages, DLL analysis,
-│                                    MITRE ATT&CK mapping, CVE-2020-10148 deep-dive,
-│                                    obfuscation techniques, remediation)
+├── README.md                     # overview
+├── analysis.md                   # full writeup 
+│                                    
+│                                    
 ├── references.md                 # annotated sources organized by category
 └── poc/
-    ├── scan_orion.sh             # Linux/macOS IOC scanner (DLL hash, DNS logs,
-    │                                file artifacts, C2 connections, sinkhole check)
-    ├── check_dll_hash.ps1        # Windows PowerShell verifier (hash check,
-    │                                TEARDROP artifacts, registry, event logs,
-    │                                DNS cache — full scan via -ScanAll flag)
+    ├── scan_orion.sh             # Linux/macOS IOC scanner 
+    │                                
+    ├── check_dll_hash.ps1        # Windows PowerShell verifier 
+    │                                
+    │                                
     ├── sunburst_dns_sim.py       # Python demo of the DNS subdomain encoding
-    │                                cipher (reverse-engineered from the DLL) with
-    │                                encode/decode modes and full cipher visualization
+    │                                cipher 
+    │                                
     └── detect_golden_saml.md     # Cloud pivot detection guide with KQL, PowerShell,
                                      and Splunk queries for ADFS/Azure AD forensics
 ```
