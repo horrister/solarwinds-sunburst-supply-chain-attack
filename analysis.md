@@ -577,7 +577,29 @@ User-Agent in SUNBURST C2 traffic:
 ```
 Mozilla/5.0 (Windows NT 6.1; WOW64; Trident/7.0; rv:11.0) like Gecko
 ```
+---
+Proof of Concept
 
+⚠️ For detection and educational purposes only.
+All scripts are safe and self-contained. No network calls are made to any C2 infrastructure. No system modifications occur. The PoC tools either scan for existing IOCs or demonstrate attack patterns in isolation.
+
+The poc/ directory contains five tools organized across two categories: scanners that help defenders identify compromise, and demonstrators that illustrate how the attack worked at a code level.
+Scanners & Detection Tools
+poc/scan_orion.sh — Linux / macOS IOC Scanner
+Bash script that checks a system for all known SUNBURST indicators of compromise. Verifies the SHA-256 hash of SolarWinds.Orion.Core.BusinessLayer.dll against all five known-malicious variants, searches system and DNS logs for references to avsvmcloud.com and all nine secondary C2 domains, checks for TEARDROP file artifacts (gracious_truth.jpg, netsetupsvc.dll), audits active TCP connections against known C2 IPs, and tests whether avsvmcloud.com correctly resolves to Microsoft's sinkhole. Outputs a color-coded summary with immediate remediation steps if indicators are found.
+poc/check_dll_hash.ps1 — Windows / PowerShell DLL Verifier
+PowerShell script for Windows environments running SolarWinds Orion. Locates and hashes SolarWinds.Orion.Core.BusinessLayer.dll from all default Orion installation paths, compares against all five known-malicious SHA-256 hashes, and checks for TEARDROP and RAINDROP file artifacts. Run with -ScanAll to additionally audit the Windows DNS resolver cache for C2 domain lookups, query the Windows Security event log for anomalous ADFS token issuance (Event ID 1202), check registry persistence keys, and review SolarWinds service start events.
+poc/detect_golden_saml.md — Golden SAML Cloud Pivot Detection Guide
+Detailed detection playbook for the post-exploitation cloud pivot technique observed in confirmed SUNBURST victim environments. Covers the required Windows Event log sources (ADFS Admin, Security log Event ID 1202), KQL queries for Azure Sentinel and Microsoft Defender to detect anomalous SAML token issuance and unexpected admin activity, Splunk queries for federated auth anomalies, PowerShell commands to audit ADFS token-signing certificate access history, and a full remediation sequence including certificate rotation, Azure AD app consent audit, and Conditional Access hardening.
+Pattern Demonstrators
+poc/sunburst_dns_sim.py — SUNBURST DNS Subdomain Encoding Demonstrator
+Python reimplementation of the substitution cipher SUNBURST used to encode victim fingerprints (hardware-derived UID + Active Directory domain name) into unique subdomains of avsvmcloud.com — reverse-engineered from the decompiled DLL by Netresec and Mandiant. Run in encode mode to see how a given domain would have appeared in attacker DNS logs; run in decode mode to reverse a captured subdomain back toward its plaintext victim identifier. Includes a full visualization of the 15-character substitution alphabet and confirms that avsvmcloud.com resolves to Microsoft's sinkhole rather than making any C2 contact.
+poc/dll_injection_demo/ — DLL Method Injection Pattern Demonstrator
+Three-part Python demonstration of the core techniques SUNBURST used inside the compromised DLL:
+
+1_injection_pattern.py — Reproduces the RefreshInternal() injection pattern: shows side-by-side the legitimate vs. compromised method, demonstrates how a single four-line thread launch is the entire malicious diff, and illustrates how the host method's behavior is completely unchanged while the backdoor runs silently in a daemon thread. The diff output mirrors what a code reviewer would have seen.
+2_hash_obfuscation.py — Implements the FNV-1a 64-bit hashing scheme SUNBURST used to store all sensitive strings (security tool names, service names, file paths) as numeric constants rather than plaintext — making the blocklist invisible to string-based static analysis. Demonstrates encoding of the full 100+ entry process blocklist and shows why a naive strings scan of the DLL would find no recognizable tool names.
+3_dormancy_gates.py — Simulates the multi-stage environmental gating logic SUNBURST ran before any C2 contact: the 12–14 day dormancy check via registry timestamp, Active Directory domain membership validation, domain name substring blocklist (rejecting lab/test/solarwinds environments), and the process blocklist check using the FNV-1a hashes from part 2. Shows exactly how the backdoor would abort silently at each gate without leaving any log trace.
 ---
 
 ## Remediation
