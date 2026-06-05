@@ -7,8 +7,6 @@
 > **Attribution:** NOBELIUM / APT29 / Cozy Bear (Russian SVR)  
 > **Malware families:** SUNBURST (SUNSPOT → SUNBURST → TEARDROP/RAINDROP → Cobalt Strike)
 
-# SUNBURST — Full Technical Analysis
-
 ---
 
 ## Table of Contents
