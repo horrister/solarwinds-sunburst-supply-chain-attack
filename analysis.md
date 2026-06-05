@@ -31,9 +31,10 @@
 9. [Indicators of Compromise (IOCs)](#indicators-of-compromise-iocs)
 10. [MITRE ATT&CK Mapping](#mitre-attck-mapping)
 11. [Detection](#detection)
-12. [Remediation](#remediation)
-13. [Systemic Lessons](#systemic-lessons)
-14. [References](#references)
+12. [Proof of Concept](#proof-of-concept)
+13. [Remediation](#remediation)
+14. [Systemic Lessons](#systemic-lessons)
+15. [References](#references)
 
 ---
 
