@@ -134,6 +134,8 @@ Post-SolarWinds guidance on software supply chain risk management, covering SBOM
 https://www.whitehouse.gov/briefing-room/presidential-actions/2021/05/12/executive-order-on-improving-the-nations-cybersecurity/  
 Biden's May 2021 executive order, directly prompted by the SolarWinds attack. Mandates SBOMs for software sold to the federal government and establishes new software supply chain security standards.
 
+---
+
 ## Summary of Core Compromise Metrics
 
 | Metric | Detail / Value |
