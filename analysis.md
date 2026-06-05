@@ -1,9 +1,8 @@
 # SolarWinds Orion — SUNBURST Supply Chain Attack - CVE-2020-10148
 
-> **Type:** Software Supply Chain Attack / Nation-State Espionage 
+> **Type:** Software Supply Chain Attack / Nation-State Espionage
 > **Severity:** Critical (CVSS 10.0)  
-> **Affected packages:** `Orion 2019.4 HF5` , `Orion 2020.2 / 2020.2 HF1` 
-> **Safe versions:** `axios@1.14.0` (1.x branch), `axios@0.30.3` (0.30.x branch)  
+> **Affected packages:** `Orion 2019.4 HF5` , `Orion 2020.2 / 2020.2 HF1`  
 > **Exposure window:** Mar 26 – Dec 13, 2020 (~9 months undetected)  
 > **Attribution:** NOBELIUM / APT29 / Cozy Bear (Russian SVR)  
 > **Malware families:** SUNBURST (SUNSPOT → SUNBURST → TEARDROP/RAINDROP → Cobalt Strike)
