@@ -133,3 +133,14 @@ Post-SolarWinds guidance on software supply chain risk management, covering SBOM
 **Executive Order 14028 — Improving the Nation's Cybersecurity**  
 https://www.whitehouse.gov/briefing-room/presidential-actions/2021/05/12/executive-order-on-improving-the-nations-cybersecurity/  
 Biden's May 2021 executive order, directly prompted by the SolarWinds attack. Mandates SBOMs for software sold to the federal government and establishes new software supply chain security standards.
+
+## Summary of Core Compromise Metrics
+
+| Metric | Detail / Value |
+| :--- | :--- |
+| **Date of Attack** | Dec 13, 2020 |
+| **Infected Versions** | `Orion 2019.4 HF5` `Orion 2020.2 / 2020.2 HF1` |
+| **Malicious Artifact**| `SolarWinds.Orion.Core.BusinessLayer.dll` |
+| **Primary Vector** | Build pipeline compromise via stolen credentials |
+| **Threat Actor** | NOBELIUM / APT29 / UNC2452 |
+| **Payload Names** | SUNBURST (Stage 1) TEARDROP / RAINDROP (Stage 2) |
