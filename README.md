@@ -10,7 +10,7 @@ A curated collection of in-depth vulnerability writeups covering real-world secu
 
 | # | Vulnerability | Type | Severity | Date | Status |
 |---|---------------|------|----------|------|--------|
-| 002 | [SolarWinds Orion Vulnerability (CVE-2020-10148)](./../../../solarwinds-sunburst-supply-chain-attack/analysis.md/) | Supply Chain | 🔴 Critical | Dec 11, 2020 | ✅ Complete |
+| 002 | [SolarWinds Orion Vulnerability (CVE-2020-10148)](./../../../solarwinds-sunburst-supply-chain-attack/blob/main/analysis.md/) | Supply Chain | 🔴 Critical | Dec 11, 2020 | ✅ Complete |
 
 ---
 
