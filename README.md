@@ -21,13 +21,13 @@ Each entry follows a consistent format:
 ```
 solarwinds-sunburst-supply-chain-attack/
 ├── README.md                     # overview
-├── analysis.md                   # full writeup 
-│                                    
-│                                    
+├── analysis.md                   # full writeup                                    
 ├── references.md                 # annotated sources organized by category
+│ 
 └── poc/                          # poc scripts
     ├── scan_orion.sh             # Linux/macOS IOC scanner 
-    │                                
+    │
+    │                             
     ├── check_dll_hash.ps1        # Windows PowerShell verifier 
     │                                
     │                                
